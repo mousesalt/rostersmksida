@@ -1,0 +1,21 @@
+/* Menggunakan font Inter sebagai default */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* CSS untuk menampilkan placeholder pada elemen [contenteditable] yang kosong.
+  Ini memberikan petunjuk kepada pengguna apa yang harus diisi.
+*/
+[contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: #9ca3af; /* text-gray-400 */
+    font-style: italic;
+    pointer-events: none; /* Memastikan placeholder bisa diklik tembus */
+}
+
+/* Memberi feedback visual saat sel di-fokus */
+[contenteditable]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6; /* ring-2 ring-blue-500 */
+    background-color: #eff6ff; /* bg-blue-50 */
+}
